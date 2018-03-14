@@ -9,7 +9,8 @@ import 'vue-croppa/dist/vue-croppa.css'
 import OmHttp from './components/global/axios'
 import {
   Button,
-  Progress
+  Progress,
+  Field
 } from 'mint-ui'
 
 import './scss/normalize.css'
@@ -20,6 +21,7 @@ Vue.use(Croppa)
 Vue.use(OmHttp)
 Vue.component('om-button', Button)
 Vue.component('om-progress', Progress)
+Vue.component('om-field', Field)
 
 /* eslint-disable no-new */
 new Vue({

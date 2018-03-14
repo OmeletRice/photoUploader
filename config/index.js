@@ -12,7 +12,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/api/token': {
-        target: 'http://learniot.cn/qiniutoken',
+        target: 'http://139.199.190.13/qiniutoken/',
         changeOrigin: true,
         pathRewrite: {
           '^/api/token': ''
@@ -58,7 +58,7 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
+    assetsPublicPath: './',
 
     /**
      * Source Maps
