@@ -112,6 +112,7 @@ export default {
       }
     },
     uploadCroppedFile (fileName) {
+      this.disabled = true
       this.myCroppa.generateBlob(blob => {
         this.showProgress = true
         let file = blob
@@ -121,9 +122,11 @@ export default {
       })
     },
     uploadNext (res) {
+      this.disabled = true
       let precent = res.total.percent
       this.progressValue = precent
       if (precent >= 100) {
+        this.disabled = false
         this.showProgress = false
       }
     },
@@ -141,10 +144,12 @@ export default {
         console.log(res, imgUrl)
       })
     },
-    sentToServer (url) {
+    sentToServer (imgUrl) {
       let uploadUrl = 'http://roundups.top:8080/cl.php'
-      this.$http.post(uploadUrl, {
-        url: url
+      this.$http.get(uploadUrl, {
+        params: {
+          url: imgUrl
+        }
       })
         .then(res => {
           console.log('收集完成')
