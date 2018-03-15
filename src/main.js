@@ -10,7 +10,9 @@ import OmHttp from './components/global/axios'
 import {
   Button,
   Progress,
-  Field
+  Field,
+  Swipe,
+  SwipeItem
 } from 'mint-ui'
 
 import './scss/normalize.css'
@@ -22,6 +24,8 @@ Vue.use(OmHttp)
 Vue.component('om-button', Button)
 Vue.component('om-progress', Progress)
 Vue.component('om-field', Field)
+Vue.component('om-swipe', Swipe)
+Vue.component('om-swipe-item', SwipeItem)
 
 /* eslint-disable no-new */
 new Vue({

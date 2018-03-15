@@ -12,7 +12,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/api/token': {
-        target: 'http://139.199.190.13/qiniutoken/',
+        target: 'http://139.199.190.13/api/token',
         changeOrigin: true,
         pathRewrite: {
           '^/api/token': ''

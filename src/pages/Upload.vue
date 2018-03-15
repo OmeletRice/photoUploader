@@ -10,6 +10,7 @@
       v-model="myCroppa"
       placeholder="点击此处打开相册或者相机"
       :prevent-white-space="true"
+      :accept="'image/*'"
       :height="cropHeight"
       :width="cropWidth"
       :quality="cropQuality"
@@ -70,7 +71,8 @@ export default {
 
   methods: {
     fetchToken () {
-      this.$http.get('/api/token')
+      const api = 'http://139.199.190.13/api/token'
+      this.$http.get(api)
         .then(res => {
           this.token = res.data.uptoken
 
@@ -133,6 +135,9 @@ export default {
     uploadComplete (res) {
       // let fileName = res.key
       // 上传到服务器的一个文件
+      MessageBox.alert('上传成功').then(action => {
+        console.log(res)
+      })
     },
     hasImage () {
       return this.myCroppa.hasImage()
@@ -142,12 +147,12 @@ export default {
     },
     setCropSize () {
       let deviceWidth = document.documentElement.clientWidth
-      if (deviceWidth < this.cropWidth) {
-        let _cropWidth = deviceWidth - 100
-        this.cropHeight = _cropWidth * this.cropHeight / this.cropWidth
-        this.cropQuality = _cropWidth * this.cropQuality / this.cropWidth
-        this.cropWidth = _cropWidth
-      }
+      // if (deviceWidth < this.cropWidth) {
+      let _cropWidth = deviceWidth - 50
+      this.cropHeight = _cropWidth * this.cropHeight / this.cropWidth
+      this.cropQuality = _cropWidth * this.cropQuality / this.cropWidth
+      this.cropWidth = _cropWidth
+      // }
     }
   },
 
