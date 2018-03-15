@@ -1,7 +1,8 @@
 <template>
   <div class="main">
     <div class="main-title">
-      <p>同学会半身照片收集</p>
+      <p>南安三中81高中同学会</p>
+      <p>个人半身照采集</p>
     </div>
     <om-swipe class="main-swipe">
       <om-swipe-item
@@ -28,9 +29,9 @@ export default {
   data () {
     return {
       swipeImages: [
-        'http://img.hkphoto.vip/swipe_1.jpg',
-        'http://img.hkphoto.vip/swipe_2.jpg',
-        'http://img.hkphoto.vip/swipe_3.jpg'
+        'http://img.hkphoto.vip/s-1.jpg',
+        'http://img.hkphoto.vip/s-2.jpg',
+        'http://img.hkphoto.vip/s-3.jpg'
       ]
     }
   },
@@ -51,11 +52,18 @@ export default {
 }
 
 .main-title {
+  border: 3px solid #b4b4b4;
+  margin: 10px;
+}
 
+.main-title p {
+ font-size: 16px;
+ color: #555555;
+ font-weight: bold;
 }
 
 .main-swipe {
-  height: 250px;
+  height: 300px;
 }
 
 .main-upload {

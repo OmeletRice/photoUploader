@@ -133,11 +133,22 @@ export default {
       })
     },
     uploadComplete (res) {
-      // let fileName = res.key
+      let fileName = res.key
+      let imgUrl = `http://img.hkphoto.vip/${fileName}`
+      this.sentToServer(imgUrl)
       // 上传到服务器的一个文件
       MessageBox.alert('上传成功').then(action => {
-        console.log(res)
+        console.log(res, imgUrl)
       })
+    },
+    sentToServer (url) {
+      let uploadUrl = 'http://roundups.top:8080/cl.php'
+      this.$http.post(uploadUrl, {
+        url: url
+      })
+        .then(res => {
+          console.log('收集完成')
+        })
     },
     hasImage () {
       return this.myCroppa.hasImage()
